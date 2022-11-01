@@ -33,4 +33,30 @@ let meuProduto: ProdutoLoja = {
     nome: "Blusa",
     preco: 29.99,
     unidades: 6
-}
+};
+
+
+/**
+ * arrays
+ */
+
+let dados: string[] = ["bruno", "ana", "trevor"];
+let dados2: Array<string> = ["bruno", "ana", "trevor"];
+
+let infos: (string | number)[] = ["bruno",30,"trevor","ana"];
+
+/**
+ * tuplas
+ */
+
+let boleto:[string,number,number] = ["bruno",19.9,3454567];
+
+/**
+ * arrays métodos
+ */
+
+dados.filter
+dados.map
+dados.push
+dados.forEach
+
