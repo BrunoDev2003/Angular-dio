@@ -130,3 +130,42 @@ class Pessoa implements robot {
 }
 const p = new Pessoa(1, "bruno");
 
+// classes
+
+class Character {
+    name: string;
+    strength: number;
+    skill: number;
+
+    constructor(name: string, strength: number, skill: number) {
+        this.name = name;
+        this.strength = strength;
+        this.skill = skill;
+    }
+
+    protected attack(): void {
+        console.log(`atacando com ${this.skill} pontos`);
+    }
+}
+
+//Character:superclass
+//Magician:subclass
+class Magician extends Character {
+    magicPoints:number;
+    constructor(name: string, strength: number, skill: number, magicPoints: number) {
+        super(name, strength, skill);
+        this.magicPoints = magicPoints;
+    }
+}
+
+/* 
+    data modifiers
+    public
+    private
+    protected
+*/
+
+const p1 = new Character("Batman",10, 98);
+const p2 = new Magician("mago", 09, 30, 100);
+console.log(p1);
+
