@@ -169,3 +169,14 @@ const p1 = new Character("Batman",10, 98);
 const p2 = new Magician("mago", 09, 30, 100);
 console.log(p1);
 
+//generics  
+function concatArray<T>(...itens: T[]):T[] {
+    return new Array().concat(...itens);
+}
+
+const numArray = concatArray<number[]>([1,5], [3]);
+const stgArray = concatArray<string[]>(["bruno","mendonça"],["gusmão"]);
+console.log(numArray);
+console.log(stgArray);
+
+
