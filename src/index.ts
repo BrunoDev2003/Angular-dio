@@ -179,4 +179,16 @@ const stgArray = concatArray<string[]>(["bruno","mendonça"],["gusmão"]);
 console.log(numArray);
 console.log(stgArray);
 
+function apiVersion(version: string) {
+    return (target) => {
+        Object.assign(target.prototype, {__version__: version, __name__: "bruno"});
+    };
+}
+
+@apiVersion("1.10")
+class Api{}
+
+const api = new Api();
+
+console.log(api);
 
