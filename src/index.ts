@@ -185,10 +185,38 @@ function apiVersion(version: string) {
     };
 }
 
-@apiVersion("1.10")
-class Api{}
 
-const api = new Api();
+
+//atribute decorator
+function minLength(length: number) {
+    return(target:any, key:string) => {
+       // console.log(target)
+       // console.log(key)
+        let _value = target[key];
+
+        const getter = () => _value;
+        const setter = (value: string) => {
+            if (value.length < length) {
+                throw new Error(`Tamanho menor que ${length}`);
+            }
+
+            Object.defineProperty(target,key, {
+                get: getter,
+                set: setter,
+            });
+        };
+    };
+}
+class Api{
+    name: string;
+
+    constructor(name: string) {
+        this.name = name;
+    }
+}
+
+
+const api = new Api("Usuarios");
 
 console.log(api);
 
