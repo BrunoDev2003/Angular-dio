@@ -1,3 +1,7 @@
-<app-card *ngIf="true"></app-card>
+<app-card *ngIf="isAliveCard; else elseBlock"></app-card>
+
+<ng-template #elseBlock>
+    <p>Olá sou um bloco condicional que só sou exibido se alguma condição for atendida!</p>
+</ng-template>
 
 <router-outlet></router-outlet>
